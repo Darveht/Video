@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desactivación de Cuenta - Glam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .form-container {
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .form-container h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .icon-container img {
+            width: 50px;
+            margin: 5px;
+        }
+        .terms {
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+            margin: 15px 0;
+        }
+        .terms input {
+            margin-right: 5px;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:disabled {
+            background-color: #aaa;
+        }
+        .submit-btn:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+        .animation {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #28a745;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Desactivación de Cuenta</h2>
+        <div class="icon-container">
+            <img src="https://d1.awsstatic.com/case-studies/LATAM/tv-tokyo_logo.95239403d946e34bd72bdbab222cebe5eec1fd17.png" alt="TV Tokio Logo">
+            <img src="https://image.winudf.com/v2/user/admin/YWRtaW5fYXBrcHVyZS1saXRlLWljb24ucG5nXzE1ODQxOTcxOTQ2MTM/icon.png?w=160&fakeurl=1" alt="APKPure Logo">
+        </div>
+        <p>Estás a punto de desactivar tu cuenta en Glam. Por favor, lee y acepta los términos y condiciones para proceder.</p>
+        <div class="terms">
+            <label>
+                <input type="checkbox" id="acceptTerms">
+                Acepto que si desactivo mi cuenta no podré volver a activarla por un mes.
+            </label>
+        </div>
+        <button id="submitBtn" class="submit-btn" disabled>Desactivar cuenta</button>
+        <div id="animation" class="animation">¡Listo! Tu cuenta ha sido desactivada con éxito.</div>
+    </div>
+
+    <script>
+        const acceptTermsCheckbox = document.getElementById("acceptTerms");
+        const submitBtn = document.getElementById("submitBtn");
+        const animation = document.getElementById("animation");
+
+        acceptTermsCheckbox.addEventListener("change", () => {
+            submitBtn.disabled = !acceptTermsCheckbox.checked;
+        });
+
+        submitBtn.addEventListener("click", () => {
+            submitBtn.disabled = true;
+            animation.style.display = "block";
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
